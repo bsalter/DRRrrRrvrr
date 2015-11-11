@@ -1,0 +1,8 @@
+<button ng-click="vm.handleClick()">Authorize</button>
+<div id="output" class="well">
+    <div>
+        <ul ng-repeat="doc in vm.docs">
+            <li><a href="{{doc.href}}">{{doc.text}}</a></li>
+        </ul>
+    </div>
+</div>

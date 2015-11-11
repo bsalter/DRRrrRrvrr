@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="drivetranslate">
   <head>
     <link rel="stylesheet" href="styles.css"/>
+    <!--
     <script>
     var init = function() {
       var interval = window.setInterval(function(){
@@ -13,22 +14,17 @@
     };
     window.action = "list";
     </script>
+    -->
     <script src="vendors.js"></script>
     <script src="app.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
   </head>
   <body class="container">
-    <h1>Hello Google DRRrrRrvrr!</h1>
+    <h1>Welcome to the Google Zombie Information and Translation Service (ZITS)!</h1>
     <div id="authorize-div">
-      <span>Authorize access to Drive API</span>
+      <span>Authorize access to Drive API: </span>
       <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-btn">
-        Authorize
-      </button>
-    </div>
-
-    <div id="output" class="well">
-      <ul></ul>
+      <authorize></authorize>
     </div>
 
   </body>

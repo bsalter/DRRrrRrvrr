@@ -19,6 +19,8 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "angular-route": "~1.4.7",
+    "angularjs-gapi": "~0.1.1"
   }
 }
