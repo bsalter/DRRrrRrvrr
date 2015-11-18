@@ -1,4 +1,6 @@
-<button ng-click="vm.handleClick()">Authorize</button>
+<span ng-if="vm.checkHideButton()">Authorize access to Drive API:
+    <button ng-click="vm.handleClick()">Authorize</button>
+</span>
 <div id="output" class="well">
     <div>
         <ul ng-repeat="doc in vm.docs">

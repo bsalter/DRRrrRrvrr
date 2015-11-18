@@ -1,7 +1,6 @@
 (function(){
     function googleDrive(client_id, scopes, $q) {
         var drive = this;
-        this.docs = [];
         var deferred = $q.defer();
         this.handleAuthClick = function() {
             gapi.auth.authorize(
@@ -20,6 +19,7 @@
             });
         };
         this.listFiles = function(callback) {
+            drive.docs = [];
             var request = gapi.client.drive.files.list({
                 'maxResults': 10,
                 'q': "mimeType = 'application/vnd.google-apps.document'"
@@ -70,7 +70,7 @@
         this.createLink = function(id, text) {
             var link = {};
             if (id != '') {
-                link.href = '/doc.html#' + id;
+                link.href = '#/doc/'+id;
                 link.text = text;
             } else {
                 link.href = '';
