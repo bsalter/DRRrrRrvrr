@@ -12,7 +12,6 @@
             });
         };
         vm.checkHideButton = function() {
-            console.log(vm.hideButton);
             return vm.hideButton !== true;
         };
     }
