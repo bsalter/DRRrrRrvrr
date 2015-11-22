@@ -2,6 +2,10 @@
     function AuthorizeController(googleDrive, $scope) {
         var vm = this;
         vm.hideButton = false;
+        if(googleDrive.docs != undefined) {
+            vm.docs = googleDrive.docs;
+            vm.hideButton = true;
+        }
         vm.handleClick = function() {
             googleDrive.handleAuthClick().then(function() {
                 googleDrive.listFiles(function(docs) {
