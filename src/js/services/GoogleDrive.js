@@ -51,8 +51,7 @@
                             xhr.setRequestHeader('Authorization', "Bearer " + accessToken);
                         },
                         success: function (data) {
-                            drive.doc = data.replace(/\n/g, "<br>");
-                            callback(drive.doc);
+                            callback(data);
                         }
                     });
                 });
