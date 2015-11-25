@@ -40,7 +40,7 @@
         };
 
         this.displayFile = function(fileId,callback) {
-            if(gapi.client != undefined) {
+            if(gapi.client !== undefined) {
                 var request = gapi.client.drive.files.get({fileId: fileId});
                 request.execute(function (resp) {
                     var accessToken = gapi.auth.getToken().access_token;
@@ -60,7 +60,7 @@
 
         this.createLink = function(id, text) {
             var link = {};
-            if (id != '') {
+            if (id !== '') {
                 link.href = '#/doc/'+id;
                 link.text = text;
             } else {

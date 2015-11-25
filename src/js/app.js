@@ -11,6 +11,6 @@
                 controllerAs: 'vm'
             }).otherwise({
                 redirectTo: '/list'
-            })
+            });
     }]);
 })();
