@@ -2,7 +2,9 @@
     function googleDrive(client_id, scopes, $q) {
         var drive = this;
         var deferred = $q.defer();
-        this.handleAuthClick = function() {
+
+        this.handleAuthClick = function(mockGapi) {
+            (mockGapi !== undefined) ? gapi = mockGapi : gapi = gapi;
             gapi.auth.authorize(
                 {client_id: client_id, scope: scopes, immediate: false},
                 drive.handleAuthResult);
@@ -13,7 +15,8 @@
                 drive.loadDriveApi();
             }
         };
-        this.loadDriveApi = function() {
+        this.loadDriveApi = function(mockGapi) {
+            (mockGapi !== undefined) ? gapi = mockGapi : gapi = gapi;
             gapi.client.load('drive', 'v2', function() {
                 deferred.resolve();
             });
