@@ -1,3 +1,5 @@
+// Note: due to complexity, I'm not going to test listFiles or displayFile. They are too closely tied to the
+// gapi application - the mock would require a substantial implementation.
 describe("googleDrive service", function() {
     var googleDrive, client_id, scopes;
     var mockGapi = {
@@ -56,6 +58,14 @@ describe("googleDrive service", function() {
             spyOn(mockGapi.client,"load");
             googleDrive.loadDriveApi(mockGapi);
             expect(gapi.client.load).toHaveBeenCalled();
+        });
+    });
+    describe("createLink", function() {
+        it("returns an object used to create links in the DOM", function() {
+            var text = "add a link to me";
+            var id = "12345";
+            var expectedObject = {href: '#/doc/12345', text: 'add a link to me'};
+            expect(googleDrive.createLink(id, text)).toEqual(expectedObject);
         });
     });
 });
