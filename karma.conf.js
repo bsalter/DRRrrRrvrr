@@ -7,6 +7,11 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
+    plugins: [
+      require('./node_modules/karma-jasmine'),
+      require('./node_modules/karma-ng-html2js-preprocessor'),
+      require('./node_modules/karma-phantomjs-launcher')
+    ],
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -15,12 +20,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-	    'bower_components/angular/angular.min.js',
-	    'bower_components/angular-mocks/angular-mocks.js',
-	    'bower_components/jquery/dist/jquery.min.js',
-	    'bower_components/**/*.min.js',
-	    'src/**/*.js'
-	    ],
+      'bower_components/jquery/dist/jquery.min.js',
+      'bower_components/angular/angular.min.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/**/*.min.js',
+      'src/js/**/*.js',
+      'src/**/*.html',
+      'src/tests/**/*.js'
+    ],
 
     // list of files to exclude
     exclude: [
@@ -30,7 +37,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/**/*.html': ['ng-html2js']
     },
+    ngHtml2JsPreprocessor: {
+      moduleName: 'templates',
+      stripPrefix: 'src/'
+    },
+
+
 
 
     // test results reporter to use
