@@ -6,7 +6,6 @@
             googleDrive.displayFile(id, function(doc) {
                 translator.translateDocument(doc, function(text) {
                     vm.doc = $sce.trustAsHtml(text);
-                    $scope.$digest();
                 });
             });
         };
