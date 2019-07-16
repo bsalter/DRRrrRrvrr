@@ -1,5 +1,3 @@
-# Assignment 3: Google DRRrrRrvrr
-# Benjamin Salter
 Google DRRrrRrvrr: an app for translating innocent Google docs into zombie language.
 Click the authorize button, select a file, watch it go.
 
