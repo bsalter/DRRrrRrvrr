@@ -13,7 +13,3 @@ Fastest way to get it up and going:
 run npm install and bower install, then run gulp build, then gulp autorun and point your browser to the url it 
 provides, or point your browser at the dist/index.html file.
 Enter a client ID in the client_id service in src/js/services/GoogleDrive.js.
-
-Notes: testing the googleDrive service is not 100% complete - I did not test the functions that were tied very
-closely to retrieving a list of files or displaying a particular file, because mocking said functionality in gapi would
-have been intense.
